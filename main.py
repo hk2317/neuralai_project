@@ -19,9 +19,7 @@ def get_repos(username):
             "size":repo.size
         })
     return repo_list
-for repo in repositories:
-    repo_path = f"C:/Users/harsh/Desktop/github_repos/{repo['name']}"
-    files = filter_files(repo_path)
+
 
 username="hk2317"
 repositories=get_repos(username)
@@ -35,6 +33,9 @@ def filter_files(repo_path):
             if any(file.endswith(ext) for ext in priority_file_types):
                 files_to_analyze.append(os.path.join(root, file))
     return files_to_analyze
+ for repo in repositories:
+    repo_path = f"C:/Users/harsh/Desktop/github_repos/{repo['name']}"
+    files = filter_files(repo_path)   
 
 import subprocess
 
