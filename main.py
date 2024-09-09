@@ -19,6 +19,9 @@ def get_repos(username):
             "size":repo.size
         })
     return repo_list
+for repo in repositories:
+    repo_path = f"C:/Users/harsh/Desktop/github_repos/{repo['name']}"
+    files = filter_files(repo_path)
 
 username="hk2317"
 repositories=get_repos(username)
